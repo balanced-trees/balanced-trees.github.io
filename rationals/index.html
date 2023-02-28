@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title> Infinite complete binary trees of rational numbers </title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="text/javascript" src="./script.js"></script>
+</head>
+<body>
+  <div class="fullscreen tree">
+    <div class="flexed foreground">
+      <label> Rational number </label>
+      <input id="number_representation" type="text" placeholder="123 / 321"/>
+      <label> Binary code of the corresponding vertex </label>
+      <input id="binary_representation" type="text" placeholder="10011011011101"/>
+      <label> The natural number corresponding to the vertex </label>
+      <input id="integer_representation" type="text" placeholder="26333"/>
+    </div>
+  </div>
+  <div class=centered>
+    <h1> Infinite complete binary search tree of rational numbers </h1>
+  </div>
+  <article class="centered foreground">
+    This web page contains short description and implementation of my infinite complete binary
+    search tree of rational numbers. This tree, generally speaking, may be useful in solving the
+    following problems:
+    <ul>
+      <li>
+        Finding the exact zero of a monotone function if the zero belongs to the set of rational
+        numbers, or finding its approximation by a rational number if it is not contained in the set
+        of rational numbers.
+      </li>
+      <li>
+        Encoding of rational numbers. The path in the tree from the root to any rational number
+        can be represented as a finite sequence of zeros and ones. This sequence can be used to
+        compactly store a rational number in computer memory.
+      </li>
+      <li>
+        Reconstructing a fraction from a floating-point number, that is, finding a fraction that is
+        close to to a given floating point number, but not equal to it.
+        For example the number 1/3 cannot be expressed exactly as a floating point number, but after
+        approximating it with some X, it will be possible to get back 1/3 from number X by searching
+        for X in the tree.
+      </li>
+    </ul>
+    The tree has the following properties:
+    <ul>
+      <li>
+        Each vertex of the tree contains a rational number, and each rational number is contained in
+        the tree exactly once. Thus there is a bijection between the vertices of the tree and the
+        rational numbers.
+      </li>
+      <li>
+        The tree is a binary search tree, that is, for each vertex it is true that its corresponding
+        rational number is greater than the numbers corresponding to its left descendants and
+        greater than the numbers corresponding to its right descendants.
+        This is one of the properties that distinguishes my tree from Calkin-Wilf tree.
+      </li>
+      <li>
+        For a rational number, the depth at which its corresponding vertex will be located, is
+        directly proportional to the maximum of the logarithm of the numerator and the logarithm of
+        the denominator of this number and does not depend on the sign.
+        This property is the key difference between my tree and the The Stern-Brocot tree in which
+        the depth depends linearly on the numerator and the denominator.
+      </li>
+      <li>
+        Using this tree, it is possible to map a finite binary code to each rational number,
+        which will indicate the path to the corresponding vertex in the tree.
+        For example, the number -3/4 corresponds to the code 010.
+      </li>
+      <li>
+        Symmetries of the binary representation of vertices.
+        If the number X corresponds to the binary code
+        X<sub>1</sub>X<sub>2</sub>X<sub>3</sub>...X<sub>n</sub>,
+        then the following properties are fulfilled for the tree:
+        <ol>
+          <li>
+            The code Y<sub>1</sub>Y<sub>2</sub>Y<sub>3</sub>...Y<sub>n</sub>
+            corresponds to number -X.
+          </li>
+          <li>
+            The code X<sub>1</sub>Y<sub>2</sub>Y<sub>3</sub>...Y<sub>n</sub>.
+            corresponds to number 1/X
+          </li>
+          <li>
+            [For numbers from 0 to 1]
+            The code X<sub>1</sub>X<sub>2</sub>Y<sub>3</sub>...Y<sub>n</sub>.
+            corresponds to 1-X
+          </li>
+          <li>
+            [For numbers from -1 to 0]
+            The code X<sub>1</sub>X<sub>2</sub>Y<sub>3</sub>...Y<sub>n</sub>.
+            corresponds to -1-X
+          </li>
+        </ol>
+        where Y<sub>i</sub> equals to one if and only if X<sub>i</sub>=0. <br>
+      </li>
+    </ul>
+  </article>
+</body>
+</html>

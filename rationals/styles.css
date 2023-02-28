@@ -1,0 +1,81 @@
+@media (prefers-color-scheme: dark) {
+  html { background:  #151621; color: #A9B1D6; }
+  input { background:  #151621; color: #FFFFFF; }
+  .foreground { background: #1F2130; }
+}
+
+@media (prefers-color-scheme: light) {
+  html { background:  #E9E9EC; color: #323232; }
+  input { background:  #E9E9EC; color: #000000; }
+  .foreground { background: #E0E1E6; }
+}
+
+body {
+  margin: 0;
+  font-size: 14pt;
+}
+
+.centered, .foreground {
+  margin: auto;
+  padding: 2ex;
+  max-width: 100ex;
+  border-radius: 2ex;
+}
+
+.fullscreen {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: max(100vh, 30rem);
+}
+
+.flexed {
+  border-radius: 8ex;
+  width: 80ex;
+  max-width: calc(100% - 4ex);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+.tree > span {
+  transition: 0.5s;
+}
+
+li {
+  margin: 1em 0;
+}
+
+label {
+  padding: 1rem 0 0rem 0;
+  border-radius: 1rem;
+}
+
+input {
+  border: 0.4ex solid #2389ff;
+  border-radius: 1rem;
+  font-size: 14pt;
+  margin: 1rem auto;
+  max-width: calc(90% - 2rem - 0.8ex);
+  outline: none;
+  padding: 1rem;
+  text-align: center;
+  transition: 0.4s;
+  width: 60ex;
+}
+
+input:focus {
+  border-color: #23ffff;
+  max-width: calc(100% - 2rem - 0.8ex);
+  width: 80ex;
+}
+
+label {
+  text-align: center;
+}
